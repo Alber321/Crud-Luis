@@ -1,6 +1,6 @@
 import React from "react";
 
-const UserList = ({users}) => {
+const UserList = ({users, setListUpdated}) => {
 
   const handleDelete= (id) => {
     const requestInit = {
@@ -9,6 +9,8 @@ const UserList = ({users}) => {
   fetch(`http://localhost:3001/api/users/${id}` , requestInit)
   .then(res => res.text())
   .then(res => console.log(res))
+
+  setListUpdated(true)
   }
 
   return (
