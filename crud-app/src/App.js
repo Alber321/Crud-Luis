@@ -13,6 +13,8 @@ function App() {
 
   const [users, setUsers] = useState([])
 
+  const [listUpdated, setlistUpdated] = useState(false)
+
   useEffect(() => {
     const getUsers  = () => {
       fetch('http://localhost:3001/api/users')

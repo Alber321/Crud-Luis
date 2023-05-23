@@ -1,6 +1,16 @@
 import React from "react";
 
 const UserList = ({users}) => {
+
+  const handleDelete= (id) => {
+    const requestInit = {
+      method: 'DELETE'
+  }
+  fetch(`http://localhost:3001/api/users/${id}` , requestInit)
+  .then(res => res.text())
+  .then(res => console.log(res))
+  }
+
   return (
     <table className="table">
       <thead>
@@ -20,7 +30,7 @@ const UserList = ({users}) => {
             <td>{user.email}</td>
             <td>
               <div className="mb-3">
-                <button className="btn btn-danger">Delete</button>
+                <button onClick={() => handleDelete(user.id)} className="btn btn-danger">Delete</button>
               </div>
             </td>
           </tr>
