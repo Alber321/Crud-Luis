@@ -33,7 +33,7 @@ function App() {
         <div className='row'>
           <div className='col-7'>
             <h2 style={{textAlign: 'center'}}>User List</h2>
-            <UserList users={users} setListUpdated={setListUpdated} />
+            <UserList user={user} setUser={setUser} users={users} setListUpdated={setListUpdated} />
           </div>
           <div className='col-5'>
           <h2 style={{textAlign: 'center'}}>Formulario de Usuario</h2>
