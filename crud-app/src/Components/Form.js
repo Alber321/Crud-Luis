@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Form = ({user, setUser, handleUserUpdate}) => {
+    const { name, lastname, email } = user;
 
     const handleChange = (e) => {
         setUser({
@@ -11,6 +12,15 @@ const Form = ({user, setUser, handleUserUpdate}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        var validEmail2 =  /^\w+([.\-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+        if (!name || !lastname || !email) {
+            alert('Todos los campos son obligatorios');
+            return;
+        }else if(!(validEmail2.test(email) ) ){
+            alert('Ingresa un correo valido.')
+            return 
+        }else
 
     if (user.id) {
         //Realizar solicitud de actualización (PUT)
@@ -25,9 +35,10 @@ const Form = ({user, setUser, handleUserUpdate}) => {
             console.log(res);
             handleUserUpdate();
             });
+            
     } else {
       
-        var validEmail =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+        var validEmail =  /^\w+([.\-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
         //Validación de Datos
         if (name === '' || lastname === '' || email === '') {
             alert('Todos los campos son obligatorios')
@@ -58,7 +69,7 @@ const Form = ({user, setUser, handleUserUpdate}) => {
         });
     };
 
-    const { name, lastname, email } = user;
+    
 
     return ( 
         
