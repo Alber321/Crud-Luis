@@ -35,11 +35,11 @@ function App() {
       <Navbar brand='CRUD-Luis'/>
       <div className='container'>
         <div className='row'>
-          <div className='col-md-7'>
+          <div className='col-lg-7'>
             <h2 style={{textAlign: 'center'}}>User List</h2>
             <UserList  users={users} setListUpdated={setListUpdated} setUser={setUser} />
           </div>
-          <div className='col-md-5'>
+          <div className='col-lg-5'>
           <h2 style={{textAlign: 'center'}}> Formulario de Usuario </h2>
           <Form user={user} setUser={setUser} handleUserUpdate={handleUserUpdate} />
           </div>

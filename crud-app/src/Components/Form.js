@@ -76,17 +76,20 @@ const Form = ({user, setUser, handleUserUpdate}) => {
     <form onSubmit={handleSubmit}>
       <div className='mb-3'>
         <label htmlFor='name' className='form-label'> Name </label>
-        <input value={user.name} name='name' onChange={handleChange} type='text' id='name' className='form-control' />
+        <input value={user.name} name='name' onChange={handleChange} type='text' id='name' 
+        className='form-control' maxLength={40} />
       </div>
 
       <div className='mb-3'>
         <label htmlFor='lastname' className='form-label'> LastName </label>
-        <input value={user.lastname} name='lastname' onChange={handleChange} type='text' id='lastname' className='form-control' />
+        <input value={user.lastname} name='lastname' onChange={handleChange} type='text' id='lastname' 
+        className='form-control' maxLength={40} />
       </div>
 
       <div className='mb-3'>
         <label htmlFor='email' className='form-label'> Email</label>
-        <input value={user.email} name='email' onChange={handleChange} type='email' id='email' className='form-control' />
+        <input value={user.email} name='email' onChange={handleChange} type='email' id='email' 
+        className='form-control' maxLength={60} />
       </div>
 
       <div className='d-grid'>
